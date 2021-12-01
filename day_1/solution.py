@@ -34,30 +34,15 @@ def part_2(nums):
     
             
 def test():
-    # first part should be 7 results
+    # first part should be 7 results & second part should be 5.
     nums = [199,200,208,210,200,207,240,269,260,263]
-    count = 0
-    for i in range(1,len(nums)):
-
-        if nums[i-1] < nums[i]:
-            count += 1
-
-    print(count)
-    #second part - should be 5 results
-    count = 0
-    last = nums[0] + nums[1] + nums[2]
-    
-    for i in range(2,len(nums)-1):
-        nxt = nums[i - 1] + nums[i] + nums[i + 1]
-        if nxt > last:
-            count += 1
-            last = nxt
-            
-    print(count)
+    part_1(nums)
+    part_2(nums)
     
 
  
 myList = read()
 part_1(myList)
 part_2(myList)
+test()
     
