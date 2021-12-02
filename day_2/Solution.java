@@ -8,9 +8,8 @@ import java.io.*;
 
 
 public class Solution {
-
 	public static void main(String args[]) throws IOException {
-	
+
 		ArrayList<String> data = readFile();
 		calc(data);
 	}
@@ -22,7 +21,7 @@ public class Solution {
       ArrayList<String> data = new ArrayList<String>();
       
       while (myReader.hasNextLine()) {
-
+      	
           data.add(myReader.nextLine());
       }
       myReader.close();
@@ -35,16 +34,6 @@ public class Solution {
 	int horizontal = 0;
 	int depth = 0;
 	int aim = 0;
-
-	// String[] data = {
-	//    "forward 5",
-	//    "down 5",
-	//    "forward 8",
-	//    "up 3",
-	//    "down 8",
-	//    "forward 2"
-	// };
-
 
 	for (String v: data) {
 
