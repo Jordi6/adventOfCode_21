@@ -9,25 +9,24 @@ import java.io.*;
 
 public class Solution {
 	public static void main(String args[]) throws IOException {
-
-		ArrayList<String> data = readFile();
-		calc(data);
+	
+	    ArrayList<String> data = readFile();
+	    calc(data);
 	}
 
 	public static ArrayList<String> readFile() throws IOException {
-
-      File file = new File("input.txt");
-      Scanner myReader = new Scanner(file);
-      ArrayList<String> data = new ArrayList<String>();
-      
-      while (myReader.hasNextLine()) {
-      	
-          data.add(myReader.nextLine());
-      }
-      myReader.close();
-      return data;
+	
+	    File file = new File("input.txt");
+	    Scanner myReader = new Scanner(file);
+	    ArrayList<String> data = new ArrayList<String>();
+	
+	    while (myReader.hasNextLine()) {
+	    	
+	        data.add(myReader.nextLine());
+	    }
+	    myReader.close();
+	    return data;
 	}
-
 
 	public static void calc(ArrayList<String> data) {
 
