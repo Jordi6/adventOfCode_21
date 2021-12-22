@@ -15,10 +15,11 @@ public class Solution {
 	public static void main(String args[]) throws IOException {
 
 		readFile();
-		partOne();
+//		partOne();
+		partTwo();
 	}
 
-	public static ArrayList<String[]> readFile() throws IOException {
+	public static ArrayList<int[][]> readFile() throws IOException {
 
 		File file = new File("input.txt");
 		Scanner myReader = new Scanner(file);
@@ -70,7 +71,7 @@ public class Solution {
 			boards.add(card);
 		}
 
-		return data;
+		return boards;
 	}
 
 	public static void partOne() {
@@ -149,6 +150,28 @@ public class Solution {
 		}
 		return false;
 
+	}
+
+	public static void partTwo() throws IOException {
+
+		long answer = 0;
+		for (Integer num : nums_drawn) {
+
+			markBoards(boards, num);
+
+			// check winning board
+			for (int k = boards.size() - 1; k >= 0 ; k--) {
+				if (isBoardWon(boards.get(k))) {
+					if (boards.size() == 1) {
+						long leftOver = calcLeftOver(boards.get(0));
+						answer = (leftOver * num);
+						System.out.println(answer);
+						return;
+					}
+					boards.remove(k);
+				}
+			}
+		}
 	}
 
 }
